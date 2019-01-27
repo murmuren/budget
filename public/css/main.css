@@ -1,0 +1,180 @@
+/* 
+    Created on : Jan 16, 2019, 8:05:15 PM
+    Author     : oleggreen
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#site{
+    padding: 10px 0;
+}
+h1,h2,label{
+    color: #214d5f;
+}
+h1{
+    font-size: 22px;
+    text-align: center;
+}
+h2{
+    font-size: 18px;
+}
+#main_container{
+    padding: 0 8px;
+}
+.popups{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    display: none;
+}
+.popups h2{
+    text-align: center;
+    margin: 10px 0 25px 0;
+}
+#add_transaction_container{
+    background: #ebefea;
+}
+#add_transaction_container > div{
+    margin-bottom: 15px;
+}
+#add_transaction_container > div > label, #add_transaction_container > div > select{
+    display: block;
+    width: 100%;
+}
+#add_transaction_container label{
+    margin-bottom: 5px;
+}
+#transaction_name, #transaction_comment{
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #c5c3c3;
+}
+#transaction_name{
+    height: 30px;
+    padding: 0 10px;
+}
+#transaction_comment{
+    height: 80px;
+    padding: 5px 10px;
+}
+#transaction_name:focus{
+    border-color: #a7cca8;
+}
+#submit_transaction, #clear_transaction{
+    padding: 10px 0;
+    border-radius: 4px;
+    font-size: 18px;
+    text-align: center;
+}
+#submit_transaction{
+    flex-grow: 1;
+    background: #a7cca8;
+    color: #434f44;
+    font-weight: 700;
+}
+#clear_transaction{
+    width: 60px;
+    flex-grow: 0;
+    margin-left: 5px;
+    background: #dc4d4d;
+    color: #ffeeee;
+}
+.button_holder{
+    display: flex;
+    justify-content: space-between;
+}
+#add_transaction{
+    display: inline-block;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    color: teal;
+}
+#add_transaction_container .close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+/* SVG */
+.svg-icon{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}
+#add_transaction_container .svg-icon{
+    color: #777;
+    font-size: 16px;
+}
+
+/* Table */
+#transactions_table{
+    border: 1px solid #c5c3c3;
+}
+.table_header, .table_row{
+    border-top: 1px solid #c5c3c3;
+    padding: 5px;
+}
+.table_row{
+    position: relative;
+}
+.row_actions{
+/*    display: none;*/
+}
+.table_row:not(.row_actions):nth-child(even){
+    background: #e0eff7;
+}
+.table_row:not(.row_actions):nth-child(odd){
+    background: #d0e0e8;
+}
+.table_row input{
+    width: 100%;
+    padding: 3px 0;
+}
+.table_row + input{
+    padding: 2px;
+}
+.table_header > div, .table_row > div{
+    display: inline-block;    
+    border-right: 1px solid #c5c3c3;
+}
+.table_header > div{
+    text-align: center;
+}
+.table_row > div{
+    text-align: left;
+}
+.table_row .table_icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.icons_holder{
+    display: inline-block;
+}
+.table_row svg{
+    width: 100%;
+    height: 100%;
+}
+.table_header > div:last-child, .table_row > div:last-child{
+    border-right: none;
+}
+.col_name{
+    width: 59%;
+}
+.col_amount{
+    width: 19%;
+}
+.col_day{
+    width: 19%;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Budget breakdown</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/public/css/main.css"/>
+    </head>
+    <body>
+        <svg:icons/>
+        <div id="site">
+            <h1>Budget shit</h1>
+            <nav>
+                <span id="add_transaction">+</span>
+            </nav>
+            <div id="main_container">
+                <div id="transactions_table">
+                    <h3>January 2019</h3>
+                    <div class="table_header">
+                        <div class="col_name">Name</div>
+                        <div class="col_amount">Amount</div>
+                        <div class="col_day">Day</div>
+                    </div>
+                    <div class="table_content">
+                        <div class="table_row" data-transaction-id="1">
+                            <div class="col_name">sdgdfg</div>
+                            <div class="col_amount">213</div>
+                            <div class="col_day">1</div>
+                        </div>
+                        <div class="table_row row_actions" data-transaction-id="1">
+                            <span class="icons_holder">
+                                <span id="edit_transaction" class="table_icon">
+                                    <svg class="svg-icon"><use xlink:href="#icon-edit"></use></svg>
+                                </span>
+                                <span id="confirm_transaction_changes" class="table_icon">
+                                    <svg class="svg-icon"><use xlink:href="#icon-check"></use></svg>
+                                </span>
+                                <span id="discard_transaction_changes" class="table_icon">
+                                    <svg class="svg-icon"><use xlink:href="#icon-cancel"></use></svg>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="table_row" data-transaction-id="2">
+                            <div class="col_name">fgsdh fghdfgh</div>
+                            <div class="col_amount">43</div>
+                            <div class="col_day">2</div>
+                        </div>
+                        <div class="table_row">
+                            <div class="col_name">sdgdfg</div>
+                            <div class="col_amount">213</div>
+                            <div class="col_day">1</div>
+                        </div>
+                        <div class="table_row">
+                            <div class="col_name">fgsdh fghdfgh</div>
+                            <div class="col_amount">43</div>
+                            <div class="col_day">2</div>
+                        </div>
+                    </div>
+                </div>
+                <popups:add-transaction/>
+            </div>
+        </div>
+        <script src="/public/js/jquery-3.3.1.js"></script>
+        <script src="/public/ckeditor/ckeditor.js"></script>
+        <script src="/public/js/main.js"></script>
+    </body>
+</html>

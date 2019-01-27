@@ -2,21 +2,76 @@
 <!DOCTYPE xml>
 
 <xml>
-	<application>
-		<default_character_encoding>UTF-8</default_character_encoding>
-		<default_page>index</default_page>
-		<default_extension>html</default_extension>
-		<auto_routing>1</auto_routing>
-		<paths>
-			<controllers>application/controllers</controllers>
-			<wrappers>application/wrappers</wrappers>
-			<views>application/views</views>
-			<listeners>application/listeners</listeners>
-			<models>application/models</models>
-		</paths>
-	</application>
-	<formats>
-		<format extension="html" content_type="text/html"/>
-		<format extension="json" content_type="application/json" class="JsonWrapper"/>
-	</formats>
+    <application>
+        <version>1</version>
+        <default_character_encoding>UTF-8</default_character_encoding>
+        <default_page>index</default_page>
+        <default_extension>html</default_extension>
+        <auto_routing>0</auto_routing>
+        <paths>
+            <controllers>application/controllers</controllers>
+            <wrappers>application/wrappers</wrappers>
+            <views>application/views</views>
+            <listeners>application/listeners</listeners>
+            <models>application/models</models>
+            <tags>application/taglib</tags>
+            <compilations>
+                <local>/Applications/XAMPP/xamppfiles/htdocs/budget/budget_compilations</local>
+                <live>/home/thebigfr/public_html/live/compilations</live>
+            </compilations>
+            <cacheables>application/cacheables</cacheables>
+        </paths>
+        <templates_extension>html</templates_extension>
+        <environments>
+            <local>budget.local</local>
+            <live>http://murz.epizy.com</live>
+        </environments>
+    </application>
+    <listeners>
+        <listener class="SessionListener"/>
+        <listener class="EnvironmentDetector"/>
+        <listener class="SQLDataSourceInjector"/>
+        <listener class="ErrorListener"/>
+        <listener class="ViewLanguageResolver"/>
+        <listener class="ViewportDetector"/>
+    </listeners>
+    <routes>
+        <route url="home" controller="HomepageController" view="homepage"/>
+        <route url="add-transaction" controller="TransactionAddController" extension="json"/>
+    </routes>
+    <formats>
+        <format extension="html" content_type="text/html" class="BypassWrapper" charset="UTF-8"/>
+        <format extension="json" content_type="application/json" class="JsonWrapper"/>
+        <format extension="xml" content_type="text/xml" class="XmlWrapper"/>
+    </formats>
+    <servers>
+        <sql>
+            <local>
+                <server driver="mysql" host="localhost" port="3306" username="oleg" password="1qaz2wsx" schema="budget" charset="utf8"/>
+            </local>
+            <live>
+                <server driver="mysql" host="localhost" port="3306" username="epiz_23235334" password="1dgq6z5p" schema="epiz_23235332_economy" charset="utf8"/>
+            </live>
+        </sql>        
+    </servers>
+    <errors>
+        <local>
+            <reporters>
+                <sql table="bugs"/>
+            </reporters>
+            <renderer display_errors="1">
+                <html/>
+                <json/>
+            </renderer>
+        </local>
+        <live>
+            <reporters>
+                <sql table="bugs"/>
+            </reporters>
+            <renderer display_errors="0">
+                <html/>
+                <json/>
+            </renderer>
+        </live>
+    </errors>
 </xml>
